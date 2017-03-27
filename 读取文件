@@ -1,0 +1,10 @@
+var sp = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+        if sp.count > 0 {
+          let url = NSURL(fileURLWithPath: "\(sp[0])/data.txt")
+            print(url)
+            
+            //读取文件
+            let str = NSString(contentsOf: url as URL, encoding: String.Encoding.utf8.rawValue)
+            print(str)
+        }
