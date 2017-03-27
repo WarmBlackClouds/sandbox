@@ -1,0 +1,12 @@
+var sp = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+        if sp.count > 0 {
+            var url = NSURL(fileURLWithPath: "\(sp[0])/data.txt")
+            print(url)
+            
+            var data = NSMutableData()
+            data.append("hhaha".data(using: String.Encoding.utf8, allowLossyConversion: true)!)
+            data.write(toFile: url.path!, atomically: true)
+            
+            print("end")
+        }
